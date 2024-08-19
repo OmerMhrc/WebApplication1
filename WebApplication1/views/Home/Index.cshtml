@@ -1,0 +1,60 @@
+﻿@model HomePageViewModel
+
+@{
+    ViewBag.Title = "Anasayfa";
+}
+
+@section header{
+@await Html.PartialAsync("_header")
+}
+
+<h1> Trend Kitaplar</h1>
+
+<div id="kitaplar">
+    @foreach (var book in Model.TrendKitaplar)
+    {
+        @await Html.PartialAsync("_kitap", book)
+    }
+ </div>
+
+
+
+
+
+
+
+
+
+
+@*  bu kod blogu tanimlanmis layoutlar arasinda default olarak belirlenmis layout yerine farkli bir layout kullanmayi saglar
+@{
+    Layout = "_Layout2";
+}
+*@
+
+@*
+@model Book
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+    <body>
+        <h1> Kitap Listesi</h1>
+        <div id="kitaplar">
+            <div id="kitap1">
+             <p>@Model.KitapAdi</p>
+             <p>@Model.KitapYazari</p>
+             <p>@Model.YayinTarihi</p>
+             <p>
+                 <ul>
+                    @foreach (var sayfa in Model.Sayfalar){
+                        <li>@sayfa</li>
+                    }
+                </ul>
+             </p>
+            </div>
+        </div>
+    </body>
+</html>
+*@

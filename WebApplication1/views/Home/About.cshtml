@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Hakkında";
+}
+
+@section menu {
+   @* @await Html.PartialAsync("_menu")*@
+    @await Component.InvokeAsync("Genres")
+}
+
+<h1>Hakkında sayfası</h1>
+
+<p>Bu websitesi Ömer Mühürcü tarafından asp.net core öğrenmesi ve uzmanlaşması adına deneme amaçlı hazırlanmıştır.<p>

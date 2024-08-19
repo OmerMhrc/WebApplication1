@@ -1,0 +1,28 @@
+﻿@model Book
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-3">
+            <img src="/image/@Model.ImageUrl" class="card-img">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title">@Model.KitapAdi</h5>
+                <p class="card-text">Yazar: @Model.KitapYazari</p>
+                <p class="card-text">Yayın Tarihi: @Model.YayinTarihi</p>
+                @if (Model.Sayfalar!=null){
+                 <ul>
+                    @foreach (var sayfa in Model.Sayfalar)
+                    {
+                        <li>@sayfa</li>
+                    }
+                 </ul>
+                }
+              @* <p class="card-text">@Model.Aciklama</p>*@
+                @*href="/Books/Details/@Model.BookId" detail sayfasinda asp-for kullanilmadiginda bu href referansi kullanilmali*@
+                <a asp-controller="books" asp-action="Details" asp-route-id="@Model.BookId" class="btn btn-primary" style="float: right; margin-top: -30px;">Detaylar</a>
+                <a asp-controller="books" asp-action="Edit" asp-route-id="@Model.BookId" class="btn btn-primary" style="float: right; margin-top: -30px;  margin-right: 10px;">Güncelle</a>
+            </div>
+        </div>
+    </div>
+</div>

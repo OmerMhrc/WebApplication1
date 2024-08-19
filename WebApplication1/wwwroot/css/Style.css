@@ -1,0 +1,10 @@
+﻿.kitap {
+    border: 20px solid #114499;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.kitap img {
+        width: 200px;
+        height: 300px;
+}

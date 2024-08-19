@@ -1,0 +1,23 @@
+﻿@model BooksViewModel
+
+@{
+    ViewBag.Title = "Kitaplar";
+}
+
+<h1>Kitap Listesi</h1>
+    <div id="kitaplar">
+    @if (Model.Kitaplar.Count() > 0){
+        @foreach (var kitap in Model.Kitaplar){
+            @await Html.PartialAsync("_kitap", kitap)
+        }
+    }
+
+    else{
+        <div class="alert alert-danger" role="alert" style="margin-top: 30px;">Kitap bulunamadı</div>
+    }
+</div>
+
+@section menu{
+   @*@await Html.PartialAsync("_menu",Model.Genres)*@
+    @await Component.InvokeAsync("Genres")
+}
