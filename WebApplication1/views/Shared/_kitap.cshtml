@@ -19,8 +19,12 @@
                  </ul>
                 }
               @* <p class="card-text">@Model.Aciklama</p>*@
-                @*href="/Books/Details/@Model.BookId" detail sayfasinda asp-for kullanilmadiginda bu href referansi kullanilmali*@
+              @*href="/Books/Details/@Model.BookId" detail sayfasinda asp-for kullanilmadiginda bu href referansi kullanilmali*@
                 <a asp-controller="books" asp-action="Details" asp-route-id="@Model.BookId" class="btn btn-primary" style="float: right; margin-top: -30px;">Detaylar</a>
+               
+                <a asp-controller="books" asp-action="Delete" asp-route-id="@Model.BookId" 
+                               class="btn btn-primary" style="background-color: red;">Kitabı sil</a>
+               
                 <a asp-controller="books" asp-action="Edit" asp-route-id="@Model.BookId" class="btn btn-primary" style="float: right; margin-top: -30px;  margin-right: 10px;">Güncelle</a>
             </div>
         </div>

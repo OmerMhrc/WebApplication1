@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using WebApplication1.models;
 
 namespace WebApplication1.Data
@@ -131,6 +132,31 @@ namespace WebApplication1.Data
         }
         public static Book GetById(int id){
             return _books.FirstOrDefault(m => m.BookId == id);
+        }
+
+        public static void Delete(int bookid)
+        {
+            Book m = GetById(bookid);
+
+            if (m != null) { 
+            
+                _books.Remove(m);
+            }
+        }
+
+        public static void Edit(Book m){
+          foreach (var kitap in _books){
+            if(kitap.BookId == m.BookId){
+               kitap.Aciklama = m.Aciklama;
+               kitap.Sayfalar = m.Sayfalar;
+               kitap.KitapYazari = m.KitapYazari;
+               kitap.YayinTarihi = m.YayinTarihi;
+               kitap.GenreId = m.GenreId;
+               kitap.ImageUrl = m.ImageUrl;
+               kitap.KitapAdi = m.KitapAdi;
+               break;
+            }
+          }
         }
     }
 }

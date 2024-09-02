@@ -1,9 +1,13 @@
 ﻿@model Book
+@using WebApplication1.models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h1>Kitap güncelleme</h1>
 <hr />
 
 <form method="post" asp-controller="books" asp-action="Edit">
+    <input type="hidden" name="BookId" value="@Model.BookId" />
+
     <div class="form-group">
         <label asp-for="KitapAdi">Kitap adı</label>
         <input asp-for="KitapAdi" class="form-control" value="@Model.KitapAdi" />
@@ -30,8 +34,19 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="GenreId">Kitap türünün id`si</label>
-        <input asp-for="GenreId" class="form-control" value="@Model.GenreId" />
+        <label asp-for="GenreId">Kitap türü</label>
+        <select asp-for="GenreId" asp-items="@ViewBag.Genres"class="form-control">
+            <option selected disabled>Seçiniz</option>
+        </select>
+       @* <select asp-for="GenreId" class="form-control">
+            <option selected disabled>Seçiniz</option>
+            <option value="1">Dünya klasikleri</option>
+            <option value="2">Felsefe</option>
+            <option value="3">Macera</option>
+            <option value="4">Roman</option>
+            <option value="5">Spor</option>
+        </select>*@
+       @* <input asp-for="GenreId" class="form-control" value="@Model.GenreId" />*@
     </div>
 
     <button type="submit" class="btn btn-primary">Güncelle</button>

@@ -1,5 +1,5 @@
 ﻿<nav class="navbar navbar-expand-lg navbar-light bg-danger">
-    <a class="navbar-brand" href="#">kitaplar.net</a>
+    <a class="navbar-brand" @*href="#"*@>kitaplar.net</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,11 +9,11 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item active">
-                <a class="nav-link" href="/Home">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/Home">Anasayfa<span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/Home/About">About</a>
+                <a class="nav-link" href="/Home/About">Hakkında</a>
             </li>
 
             <li class="nav-item">
@@ -23,7 +23,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/Books/Create">Kitap ekle</a>
             </li>
-
+            @*
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
@@ -38,7 +38,7 @@
 
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+            </li>*@
         </ul>
 
         <form action="/Books/List" method="get" class="form-inline my-2 my-lg-0">

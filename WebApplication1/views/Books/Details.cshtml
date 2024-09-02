@@ -11,18 +11,8 @@
                 <p class="card-text">@Model.Aciklama</p>
                 <p class="card-text">Yazar:@Model.KitapYazari</p>
                 <p class="card-text">Tarihi:@Model.YayinTarihi</p>
-                @if(Model.Sayfalar != null){
-                <p>
-                    <ul>
-                        @foreach (var sayfa in Model.Sayfalar)
-                        {
-                            <li>@sayfa</li>
-                        }
-                    </ul>
-                </p>
-                }
+                
             </div>
         </div>
     </div>
-
 </div>

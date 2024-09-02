@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.models
 {
     public class Book
     {
-
+        [Required]
         public int BookId { get; set; }
         //[DisplayName("Başlık")]
+        [Required]
         public string KitapAdi { get; set; }
         public string KitapYazari { get; set; }
         public string YayinTarihi { get; set; }
